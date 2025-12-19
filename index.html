@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Waste Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>E-Waste Recommendation System</h1>
+
+    <form method="POST" action="/recommend">
+
+        <label>Device Type</label>
+        <select name="device" required>
+            <option value="">Select Device</option>
+            <option>Mobile</option>
+            <option>Laptop</option>
+            <option>TV</option>
+            <option>Battery</option>
+        </select>
+
+        <label>Condition</label>
+        <select name="condition" required>
+            <option value="">Select Condition</option>
+            <option>Working</option>
+            <option>Not Working</option>
+        </select>
+
+        <label>Age (Years)</label>
+        <input type="number" name="age" min="0" required>
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+</div>
+
+</body>
+</html>

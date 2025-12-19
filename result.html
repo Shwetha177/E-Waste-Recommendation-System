@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Recycling Recommendation</h1>
+
+    <h3>📝 Selected Details</h3>
+    <div class="result-box">
+        <p><strong>Device Type:</strong> {{ device }}</p>
+        <p><strong>Condition:</strong> {{ condition }}</p>
+        <p><strong>Age:</strong> {{ age }} years</p>
+    </div>
+
+    <h3>✅ Recommended Action</h3>
+    <div class="result-box">
+        {{ recommendation }}
+    </div>
+
+    <h3>📍 Nearby Recycling Centers</h3>
+    <ul>
+        {% for center in centers %}
+        <li>{{ center }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>🪜 Steps to Recycle</h3>
+    <ol>
+        {% for step in steps %}
+        <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+
+    <h3>💡 Suggestions</h3>
+    <ul>
+        {% for suggestion in suggestions %}
+        <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Check Another Device</a>
+</div>
+
+</body>
+</html>
